@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Automation Proposal – Business Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f172a;
+      --navy2: #1e293b;
+      --gold: #f59e0b;
+      --gold-light: #fcd34d;
+      --gold-dark: #b45309;
+      --white: #ffffff;
+      --offwhite: #f8fafc;
+      --gray100: #f1f5f9;
+      --gray200: #e2e8f0;
+      --gray400: #94a3b8;
+      --gray600: #475569;
+      --gray800: #1e293b;
+      --green: #10b981;
+      --red: #ef4444;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(15,23,42,0.08);
+      --shadow-lg: 0 12px 40px rgba(15,23,42,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--offwhite);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ───────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,23,42,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245,158,11,0.15);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray400);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all .2s;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+      background: rgba(245,158,11,0.1);
+    }
+
+    /* ── SECTIONS ──────────────────────────────────────── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1060px; margin: 0 auto; }
+
+    .section-label {
+      display: inline-block;
+      background: rgba(245,158,11,0.12);
+      color: var(--gold-dark);
+      border: 1px solid rgba(245,158,11,0.25);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 4px 14px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray600);
+      max-width: 580px;
+      margin-bottom: 48px;
+    }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    #hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 700px 500px at 60% 40%, rgba(245,158,11,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-size: clamp(32px, 5.5vw, 58px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 560px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .hero-metrics {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .metric {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-value {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 13px;
+      color: var(--gray400);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    .hero-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      align-self: center;
+    }
+    .hero-prepared {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-prepared-item { display: flex; flex-direction: column; }
+    .hero-prepared-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gray400); margin-bottom: 4px; }
+    .hero-prepared-value { font-size: 15px; font-weight: 600; color: var(--white); }
+
+    /* ── PROBLEM ───────────────────────────────────────── */
+    #problem { background: var(--white); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+    .problem-card {
+      background: var(--offwhite);
+      border: 1px solid var(--gray200);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .problem-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+    .problem-icon { font-size: 32px; margin-bottom: 14px; }
+    .problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--navy); }
+    .problem-card p { font-size: 14px; color: var(--gray600); line-height: 1.65; }
+
+    .stat-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e1b4b 100%);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 38px; font-weight: 900; color: var(--gold); letter-spacing: -1px; line-height: 1; }
+    .stat-desc { font-size: 13px; color: #94a3b8; margin-top: 6px; }
+
+    /* ── PIPELINE ──────────────────────────────────────── */
+    #pipeline { background: var(--offwhite); }
+    .pipeline-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pipeline-step {
+      background: var(--white);
+      border: 1.5px solid var(--gray200);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .pipeline-step:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.1);
+    }
+    .pipeline-step .step-num {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pipeline-step .step-icon { font-size: 28px; margin: 8px 0 10px; }
+    .pipeline-step .step-label { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .pipeline-arrow { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--gold); font-weight: 700; }
+
+    /* ── FLOWS ─────────────────────────────────────────── */
+    #flows { background: var(--white); }
+    .flows-list { display: flex; flex-direction: column; gap: 32px; }
+    .flow-card {
+      border: 1.5px solid var(--gray200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow .2s;
+    }
+    .flow-card:hover { box-shadow: var(--shadow-lg); }
+    .flow-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 32px;
+      background: var(--offwhite);
+      border-bottom: 1px solid var(--gray200);
+    }
+    .flow-num {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--navy), #1e1b4b);
+      color: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .flow-header-text h3 { font-size: 19px; font-weight: 800; color: var(--navy); }
+    .flow-header-text p { font-size: 14px; color: var(--gray600); margin-top: 3px; }
+    .flow-body { padding: 28px 32px; }
+    .flow-steps { display: flex; flex-direction: column; gap: 14px; }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--offwhite);
+      border-radius: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    .flow-step-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .flow-step-text h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .flow-step-text p { font-size: 13px; color: var(--gray600); line-height: 1.55; }
+
+    /* timeline inside flow */
+    .flow-timeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .tl-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 90px;
+    }
+    .tl-dot {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      border: 2.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .tl-label { font-size: 11px; font-weight: 700; color: var(--navy); text-align: center; }
+    .tl-sublabel { font-size: 10px; color: var(--gray400); text-align: center; }
+    .tl-arrow { flex: 1; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); min-width: 20px; }
+
+    /* ── COMPARISON ────────────────────────────────────── */
+    #comparison { background: var(--offwhite); }
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    .compare-table thead tr {
+      background: var(--navy);
+    }
+    .compare-table thead th {
+      padding: 18px 24px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .compare-table thead th:first-child { border-radius: 0; }
+    .compare-table thead th.col-bad { color: #fca5a5; }
+    .compare-table thead th.col-good { color: var(--gold-light); }
+    .compare-table tbody tr { border-bottom: 1px solid var(--gray100); }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+    .compare-table tbody tr:hover { background: var(--offwhite); }
+    .compare-table td {
+      padding: 16px 24px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+    .compare-table td:first-child { font-weight: 600; color: var(--navy); }
+    .col-bad { color: var(--red); font-weight: 500; }
+    .col-good { color: var(--green); font-weight: 600; }
+    .tick { color: var(--green); font-weight: 700; }
+    .cross { color: var(--red); }
+
+    /* ── WHAT YOU GET ──────────────────────────────────── */
+    #deliverables { background: var(--white); }
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .deliverable-card {
+      border: 1.5px solid var(--gray200);
+      border-radius: var(--radius);
+      padding: 26px;
+      background: var(--offwhite);
+      transition: box-shadow .2s, border-color .2s, transform .2s;
+    }
+    .deliverable-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .deliverable-icon { font-size: 28px; margin-bottom: 12px; }
+    .deliverable-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .deliverable-card p { font-size: 13px; color: var(--gray600); line-height: 1.6; }
+
+    /* ── TIMELINE ──────────────────────────────────────── */
+    #timeline { background: var(--offwhite); }
+    .timeline-list { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(245,158,11,0.1));
+    }
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      padding-bottom: 36px;
+      position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .tl-week-dot {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--navy), #1e1b4b);
+      border: 2.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.2;
+      z-index: 1;
+    }
+    .tl-content {
+      background: var(--white);
+      border: 1.5px solid var(--gray200);
+      border-radius: 12px;
+      padding: 20px 24px;
+      flex: 1;
+    }
+    .tl-content h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tl-content p { font-size: 14px; color: var(--gray600); }
+
+    /* ── PRICING ───────────────────────────────────────── */
+    #pricing { background: var(--white); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      border: 1.5px solid var(--gray200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .pricing-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .pricing-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.15), var(--shadow-lg);
+    }
+    .pricing-tag {
+      background: var(--gold);
+      color: var(--navy);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 16px;
+    }
+    .pricing-header {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--gray100);
+    }
+    .pricing-name { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .pricing-desc { font-size: 13px; color: var(--gray600); }
+    .pricing-price {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--gray100);
+    }
+    .price-row { display: flex; align-items: baseline; gap: 6px; }
+    .price-currency { font-size: 20px; font-weight: 700; color: var(--gray600); }
+    .price-amount { font-size: 44px; font-weight: 900; color: var(--navy); letter-spacing: -2px; line-height: 1; }
+    .price-type { font-size: 13px; color: var(--gray400); }
+    .pricing-body { padding: 24px 28px; }
+    .pricing-includes { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray400); margin-bottom: 14px; }
+    .pricing-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--gray800);
+    }
+    .pricing-item .pi-check { color: var(--green); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .pricing-cta {
+      display: block;
+      text-align: center;
+      margin: 4px 28px 28px;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .2s;
+      background: var(--navy);
+      color: var(--gold);
+      border: 2px solid var(--navy);
+    }
+    .pricing-cta:hover { background: transparent; color: var(--navy); }
+    .pricing-card.featured .pricing-cta {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .pricing-card.featured .pricing-cta:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+
+    .roi-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e1b4b 100%);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .roi-icon { font-size: 48px; flex-shrink: 0; }
+    .roi-text h3 { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .roi-text p { font-size: 15px; color: #94a3b8; line-height: 1.6; }
+    .roi-text strong { color: var(--gold); }
+
+    /* ── CTA ───────────────────────────────────────────── */
+    #cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #0f172a 100%);
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 600px 400px at 50% 50%, rgba(245,158,11,0.06) 0%, transparent 70%);
+    }
+    #cta .section-title { color: var(--white); }
+    #cta .section-sub { color: #94a3b8; margin-left: auto; margin-right: auto; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 800;
+      padding: 18px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: all .2s;
+      box-shadow: 0 8px 30px rgba(245,158,11,0.35);
+    }
+    .cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(245,158,11,0.45); }
+    .cta-note { font-size: 13px; color: var(--gray400); margin-top: 20px; }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer p { font-size: 13px; color: var(--gray400); }
+    footer strong { color: var(--gold); }
+
+    /* ── MOBILE ────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero-metrics { gap: 20px; }
+      .hero-divider { display: none; }
+      .stat-banner { padding: 28px 20px; }
+      .flow-header, .flow-body { padding: 20px; }
+      .compare-table { display: block; overflow-x: auto; }
+      .roi-box { padding: 28px 24px; }
+      section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Growth<span>Auto</span></div>
+    <ul class="nav-links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#flows">Automations</a></li>
+      <li><a href="#comparison">Results</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-badge">🚀 Marketing Automation Proposal</div>
+    <h1 class="hero-title">
+      Stop Losing Leads.<br/>
+      Start <span class="highlight">Closing More Clients.</span>
+    </h1>
+    <p class="hero-sub">
+      A done-for-you automation system built for coaches and trainers — so every lead gets followed up, every call gets booked, and every deal gets closed. Without you doing it manually.
+    </p>
+    <div class="hero-metrics">
+      <div class="metric">
+        <span class="metric-value">8×</span>
+        <span class="metric-label">Higher conversion with<br/>sub-5-min response</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="metric">
+        <span class="metric-value">80%</span>
+        <span class="metric-label">Of sales need 5+<br/>follow-up touchpoints</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="metric">
+        <span class="metric-value">₹1.5L</span>
+        <span class="metric-label">Lost per event from<br/>unfollowed leads</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="metric">
+        <span class="metric-value">98%</span>
+        <span class="metric-label">Of deals need more<br/>than 1 contact</span>
+      </div>
+    </div>
+    <div class="hero-prepared">
+      <div class="hero-prepared-item">
+        <span class="hero-prepared-label">Prepared For</span>
+        <span class="hero-prepared-value">[Client Name]</span>
+      </div>
+      <div class="hero-prepared-item">
+        <span class="hero-prepared-label">Prepared By</span>
+        <span class="hero-prepared-value">[Your Name / Agency]</span>
+      </div>
+      <div class="hero-prepared-item">
+        <span class="hero-prepared-label">Date</span>
+        <span class="hero-prepared-value">June 19, 2026</span>
+      </div>
+      <div class="hero-prepared-item">
+        <span class="hero-prepared-label">Valid Until</span>
+        <span class="hero-prepared-value">July 19, 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEM ──────────────────────────────────────────── -->
+<section id="problem">
+  <div class="container">
+    <div class="section-label">The Real Problem</div>
+    <h2 class="section-title">Why Your Revenue Has a Leak</h2>
+    <p class="section-sub">You're generating leads — but the follow-up system isn't keeping up. Here's what's silently costing you.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">📋</div>
+        <h3>Leads Die in Spreadsheets</h3>
+        <p>Interest forms, webinar sign-ups, and DMs get logged but never actioned. Leads go cold while you're focused on delivery.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Slow Response Time</h3>
+        <p>50% of buyers choose the vendor who responds first. If you're in a session when someone enquires, you've already lost to a competitor who replied instantly.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔄</div>
+        <h3>Inconsistent Follow-Up</h3>
+        <p>48% of salespeople never follow up at all. Without a system, you follow up when you remember — not when it matters most.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <h3>Proposals Left Unopened</h3>
+        <p>You send a proposal after a great discovery call — and then silence. No reminder system means clients forget, and you lose deals you should have closed.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📉</div>
+        <h3>One-and-Done Outreach</h3>
+        <p>Most coaches give up after the first "let me think about it." But 93% of conversions happen only by the 6th contact attempt.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🕳️</div>
+        <h3>Old Leads Abandoned</h3>
+        <p>Leads from 3 months ago who weren't ready then might be ready now — but with no nurture system, they've moved on to someone who stayed in touch.</p>
+      </div>
+    </div>
+
+    <div class="stat-banner">
+      <div class="stat-item">
+        <div class="stat-num">48%</div>
+        <div class="stat-desc">of coaches never follow<br/>up with a prospect</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5 min</div>
+        <div class="stat-desc">response window for<br/>8× higher conversion</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6×</div>
+        <div class="stat-desc">attempts needed to<br/>reach 93% of conversions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2%</div>
+        <div class="stat-desc">of deals close on<br/>first contact only</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PIPELINE ─────────────────────────────────────────── -->
+<section id="pipeline">
+  <div class="container">
+    <div class="section-label">The System</div>
+    <h2 class="section-title">Every Lead. Every Stage. Fully Automated.</h2>
+    <p class="section-sub">A 7-stage pipeline that takes every prospect from first contact to signed client — without manual intervention.</p>
+
+    <div class="pipeline-track">
+      <div class="pipeline-step">
+        <div class="step-num">1</div>
+        <div class="step-icon">🆕</div>
+        <div class="step-label">Lead Captured</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">2</div>
+        <div class="step-icon">⚡</div>
+        <div class="step-label">Instant Response</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">3</div>
+        <div class="step-icon">📅</div>
+        <div class="step-label">Call Booked</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">4</div>
+        <div class="step-icon">🔔</div>
+        <div class="step-label">Reminders Sent</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">5</div>
+        <div class="step-icon">📩</div>
+        <div class="step-label">Proposal Delivered</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">6</div>
+        <div class="step-icon">🌱</div>
+        <div class="step-label">Nurture Sequence</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">7</div>
+        <div class="step-icon">✅</div>
+        <div class="step-label">Client Signed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FLOWS ───────────────────────────────────────────── -->
+<section id="flows">
+  <div class="container">
+    <div class="section-label">5 Automation Flows</div>
+    <h2 class="section-title">What Gets Built For You</h2>
+    <p class="section-sub">Five fully configured automation sequences that run 24/7 so you never miss a lead, a reminder, or a closing opportunity.</p>
+
+    <div class="flows-list">
+
+      <!-- Flow 1 -->
+      <div class="flow-card">
+        <div class="flow-header">
+          <div class="flow-num">1</div>
+          <div class="flow-header-text">
+            <h3>⚡ Instant Lead Response (0–5 Minutes)</h3>
+            <p>Every inquiry — website, webinar, social, referral — gets an instant, branded reply before you even see the notification.</p>
+          </div>
+        </div>
+        <div class="flow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-icon">📋</div>
+              <div class="flow-step-text">
+                <h4>Form Submitted (Any Channel)</h4>
+                <p>Triggers from: Website forms, Webinar registrations, LinkedIn lead gen forms, WhatsApp opt-ins, Referral pages</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">📧</div>
+              <div class="flow-step-text">
+                <h4>Instant Welcome Email Sent</h4>
+                <p>Warm, branded email in your voice — acknowledging their interest and setting expectations</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">📅</div>
+              <div class="flow-step-text">
+                <h4>Discovery Call Booking Link Delivered</h4>
+                <p>One-click calendar link (Calendly/Cal.com) so they can book at their convenience</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🎯</div>
+              <div class="flow-step-text">
+                <h4>Credibility Kit Attached</h4>
+                <p>Case studies, testimonials, and your intro video — sent while you're busy coaching</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow 2 -->
+      <div class="flow-card">
+        <div class="flow-header">
+          <div class="flow-num">2</div>
+          <div class="flow-header-text">
+            <h3>📅 Discovery Call Booking & No-Show Prevention</h3>
+            <p>Eliminates scheduling back-and-forth and dramatically reduces no-shows with a smart reminder sequence.</p>
+          </div>
+        </div>
+        <div class="flow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-icon">✅</div>
+              <div class="flow-step-text">
+                <h4>Booking Confirmed Immediately</h4>
+                <p>Confirmation email + calendar invite sent the moment they book</p>
+              </div>
+            </div>
+          </div>
+          <div class="flow-timeline">
+            <div class="tl-node">
+              <div class="tl-dot">📬</div>
+              <div class="tl-label">Booking</div>
+              <div class="tl-sublabel">Confirmed</div>
+            </div>
+            <div class="tl-arrow"></div>
+            <div class="tl-node">
+              <div class="tl-dot">📧</div>
+              <div class="tl-label">48 hrs</div>
+              <div class="tl-sublabel">Reminder</div>
+            </div>
+            <div class="tl-arrow"></div>
+            <div class="tl-node">
+              <div class="tl-dot">🔔</div>
+              <div class="tl-label">24 hrs</div>
+              <div class="tl-sublabel">Reminder</div>
+            </div>
+            <div class="tl-arrow"></div>
+            <div class="tl-node">
+              <div class="tl-dot">⏰</div>
+              <div class="tl-label">2 hrs</div>
+              <div class="tl-sublabel">Final Alert</div>
+            </div>
+            <div class="tl-arrow"></div>
+            <div class="tl-node">
+              <div class="tl-dot">📞</div>
+              <div class="tl-label">Call</div>
+              <div class="tl-sublabel">Happens</div>
+            </div>
+            <div class="tl-arrow"></div>
+            <div class="tl-node">
+              <div class="tl-dot">💌</div>
+              <div class="tl-label">1 hr after</div>
+              <div class="tl-sublabel">Follow-up</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow 3 -->
+      <div class="flow-card">
+        <div class="flow-header">
+          <div class="flow-num">3</div>
+          <div class="flow-header-text">
+            <h3>🌱 Post-Call Nurture Sequence (14 Days)</h3>
+            <p>For every "let me think about it" — a 14-day value sequence that converts hesitant leads without chasing them manually.</p>
+          </div>
+        </div>
+        <div class="flow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-icon">📅</div>
+              <div class="flow-step-text">
+                <h4>Day 1 — Thank You + Call Recap</h4>
+                <p>Reinforces what was discussed, confirms next steps clearly</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🏆</div>
+              <div class="flow-step-text">
+                <h4>Day 3 — Client Success Story</h4>
+                <p>Real results from someone just like them — builds belief and removes doubt</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">💡</div>
+              <div class="flow-step-text">
+                <h4>Day 5 — Objection Crusher</h4>
+                <p>Directly addresses the #1 hesitation you hear on calls — written conversationally</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🎁</div>
+              <div class="flow-step-text">
+                <h4>Day 7 — Free Resource</h4>
+                <p>Framework, checklist, or short video that gives value and demonstrates your expertise</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">⭐</div>
+              <div class="flow-step-text">
+                <h4>Day 10 — Social Proof Drop</h4>
+                <p>Testimonials and transformation results from recent clients</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🤝</div>
+              <div class="flow-step-text">
+                <h4>Day 14 — Soft Close</h4>
+                <p>"Still open to reconnecting?" — a low-pressure final touchpoint that re-opens the door</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow 4 -->
+      <div class="flow-card">
+        <div class="flow-header">
+          <div class="flow-num">4</div>
+          <div class="flow-header-text">
+            <h3>📩 Proposal & Closing Automation</h3>
+            <p>Proposals are delivered, followed up, and signed — automatically. No more deals dying in inboxes.</p>
+          </div>
+        </div>
+        <div class="flow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-icon">📄</div>
+              <div class="flow-step-text">
+                <h4>Proposal Auto-Delivered</h4>
+                <p>Sent within 30 minutes of call ending — while they're still warm</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🔔</div>
+              <div class="flow-step-text">
+                <h4>Reminder Sequence (Day 2 → 5 → 9)</h4>
+                <p>Three gentle follow-ups with different angles — urgency, value, and social proof</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">✍️</div>
+              <div class="flow-step-text">
+                <h4>One-Click Digital Agreement</h4>
+                <p>PandaDoc / DocuSign integration — sign from any device in 60 seconds</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">💳</div>
+              <div class="flow-step-text">
+                <h4>Payment Link + Auto-Onboarding</h4>
+                <p>Razorpay / Stripe integration — payment confirmed → onboarding sequence fires automatically</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow 5 -->
+      <div class="flow-card">
+        <div class="flow-header">
+          <div class="flow-num">5</div>
+          <div class="flow-header-text">
+            <h3>📡 Long-Term Nurture (Months 1–6+)</h3>
+            <p>Keeps your name in the inbox of every lead who wasn't ready — until they are.</p>
+          </div>
+        </div>
+        <div class="flow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-icon">📰</div>
+              <div class="flow-step-text">
+                <h4>Monthly Value Newsletter</h4>
+                <p>Tips, insights, and stories — sent automatically every month</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🔁</div>
+              <div class="flow-step-text">
+                <h4>Quarterly Re-Engagement</h4>
+                <p>"Still thinking about [their goal]?" — checks in with cold leads every 90 days</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">📢</div>
+              <div class="flow-step-text">
+                <h4>Event / Webinar Broadcast</h4>
+                <p>Every workshop or webinar you run gets announced to your entire lead list automatically</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">🎯</div>
+              <div class="flow-step-text">
+                <h4>Smart Segmentation</h4>
+                <p>Leads are grouped by source, interest, and engagement level for targeted messaging</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON ───────────────────────────────────────── -->
+<section id="comparison">
+  <div class="container">
+    <div class="section-label">Before vs. After</div>
+    <h2 class="section-title">The Numbers Don't Lie</h2>
+    <p class="section-sub">Here's what the same 50 monthly inquiries look like with and without this system.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th class="col-bad">❌ Without Automation</th>
+          <th class="col-good">✅ With Automation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lead response time</td>
+          <td class="col-bad">Hours or never</td>
+          <td class="col-good">Under 5 minutes, 24/7</td>
+        </tr>
+        <tr>
+          <td>Discovery calls booked (of 50)</td>
+          <td class="col-bad">20</td>
+          <td class="col-good">38</td>
+        </tr>
+        <tr>
+          <td>No-shows per month</td>
+          <td class="col-bad">8 (40% no-show rate)</td>
+          <td class="col-good">2 (under 5%)</td>
+        </tr>
+        <tr>
+          <td>Leads who receive follow-up</td>
+          <td class="col-bad">10 out of 50</td>
+          <td class="col-good">50 out of 50</td>
+        </tr>
+        <tr>
+          <td>Proposals sent after call</td>
+          <td class="col-bad">Same day, maybe</td>
+          <td class="col-good">Within 30 minutes, always</td>
+        </tr>
+        <tr>
+          <td>Proposal follow-up</td>
+          <td class="col-bad">Forgotten after Day 1</td>
+          <td class="col-good">3-touch automatic sequence</td>
+        </tr>
+        <tr>
+          <td>Clients signed per month</td>
+          <td class="col-bad">3</td>
+          <td class="col-good">7–9</td>
+        </tr>
+        <tr>
+          <td>Old leads re-engaged</td>
+          <td class="col-bad">Never</td>
+          <td class="col-good">Quarterly, automatically</td>
+        </tr>
+        <tr>
+          <td>Lead tracking</td>
+          <td class="col-bad">Scattered spreadsheets</td>
+          <td class="col-good">Unified CRM with full history</td>
+        </tr>
+        <tr>
+          <td>Time spent on follow-up</td>
+          <td class="col-bad">3–5 hours/week</td>
+          <td class="col-good">Under 30 minutes/week</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── DELIVERABLES ─────────────────────────────────────── -->
+<section id="deliverables">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">Everything Included. Nothing Left to Figure Out.</h2>
+    <p class="section-sub">We don't just hand you tools. We build your entire system, write your emails, and make sure it works before we hand it over.</p>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="deliverable-icon">⚙️</div>
+        <h3>Full System Build & Setup</h3>
+        <p>Every automation configured, connected, and tested — CRM, email, booking, proposals, and payments.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">✍️</div>
+        <h3>All Email Copy Written For You</h3>
+        <p>Every sequence written in your voice — welcome emails, nurture sequences, follow-ups, and closing emails.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🔗</div>
+        <h3>Multi-Platform Integration</h3>
+        <p>Website forms, LinkedIn, WhatsApp, webinar tools, and payment systems — all connected into one pipeline.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🧪</div>
+        <h3>Full QA Before Go-Live</h3>
+        <p>Every flow tested end-to-end. Nothing goes live until we've confirmed it works exactly as designed.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🎓</div>
+        <h3>Handover Training Session</h3>
+        <p>1:1 walkthrough so you (or your team) can manage, update, and expand the system independently.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🛡️</div>
+        <h3>60-Day Post-Launch Support</h3>
+        <p>We stay on to fix issues, optimize sequences, and refine based on real response data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE ─────────────────────────────────────────── -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-label">Implementation</div>
+    <h2 class="section-title">Live in 4 Weeks</h2>
+    <p class="section-sub">A structured 4-week build process — then 4 weeks of active support to optimise and improve.</p>
+
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="tl-week-dot">WK<br/>1</div>
+        <div class="tl-content">
+          <h3>Discovery & Strategy</h3>
+          <p>Deep-dive into your current process, lead sources, tools, and goals. CRM and tech stack setup begins.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-week-dot">WK<br/>2</div>
+        <div class="tl-content">
+          <h3>Content & Sequence Writing</h3>
+          <p>All email sequences written, reviewed with you, and approved. Automation map finalized.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-week-dot">WK<br/>3</div>
+        <div class="tl-content">
+          <h3>Build, Integrate & Test</h3>
+          <p>All 5 automation flows built, connected, and tested across every lead source and scenario.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-week-dot">WK<br/>4</div>
+        <div class="tl-content">
+          <h3>Go-Live + Handover</h3>
+          <p>System goes live. Full walkthrough and training session. You start capturing every lead automatically.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-week-dot">WK<br/>5–8</div>
+        <div class="tl-content">
+          <h3>Support, Optimise & Report</h3>
+          <p>Monitor open rates, booking rates, and conversion data. Refine sequences based on real results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING SECTION REMOVED ──────────────────────────── -->
+
+<!-- ── CTA ──────────────────────────────────────────────── -->
+<section id="cta">
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="section-label" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); color: var(--gold-light);">Let's Talk</div>
+    <h2 class="section-title" style="color: var(--white);">Ready to Stop Losing Leads?</h2>
+    <p class="section-sub" style="color: #94a3b8; margin-left: auto; margin-right: auto; text-align: center;">
+      Book a free 30-minute strategy call. We'll map out exactly which automations will have the highest impact for your business — no pressure, no pitch, just a clear plan.
+    </p>
+    <div style="text-align: center; margin-top: 16px;">
+      <a href="mailto:thinktoshareblogging@gmail.com" class="cta-btn">
+        Book a Free Strategy Call →
+      </a>
+      <p class="cta-note">No commitment required · 30 minutes · Free</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer>
+  <p>Prepared by <strong>[Your Name / Agency Name]</strong> &nbsp;·&nbsp; Proposal valid until <strong>July 19, 2026</strong> &nbsp;·&nbsp; Questions? <strong>thinktoshareblogging@gmail.com</strong></p>
+  <p style="margin-top: 8px; font-size: 12px; color: #475569;">All statistics sourced from industry research. Results vary based on niche, audience, and existing processes.</p>
+</footer>
+
+</body>
+</html>

@@ -1,9 +1,3 @@
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
-
 // Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -25,7 +19,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll(
-  '.service-card, .testimonial, .step, .feature, .contact-item, .about-text, .about-image'
+  '.service-row, .approach-step, .about-feature, .testimonial-item, .contact-list li'
 ).forEach(el => {
   el.classList.add('reveal');
   observer.observe(el);
@@ -37,17 +31,15 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const btn = e.target.querySelector('button[type="submit"]');
   const original = btn.textContent;
   btn.textContent = '✓ Request Sent! We\'ll be in touch soon.';
-  btn.style.background = '#2f6f4f';
   btn.disabled = true;
   setTimeout(() => {
     btn.textContent = original;
-    btn.style.background = '';
     btn.disabled = false;
     e.target.reset();
   }, 4000);
 });
 
-// Smooth active nav highlight
+// Active nav highlight
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {

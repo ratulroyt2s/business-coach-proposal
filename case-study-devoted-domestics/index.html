@@ -141,15 +141,16 @@ main{padding-top:110px;overflow:hidden;}
 @media (max-width:1023px){ .gallery-phones{display:none;} }
 
 /* ── MACBOOK / CTA ──────────────────────────────────── */
-#macbook{position:relative;}
-.macbook-shell{height:560px;background:#0c0c0c;display:flex;align-items:flex-end;justify-content:center;padding-bottom:0;overflow:hidden;}
-.macbook-frame{width:1040px;max-width:92%;background:#111;border-radius:14px 14px 0 0;padding:14px 14px 0;box-shadow:0 -10px 60px rgba(0,0,0,.5);}
+#macbook{position:relative;padding-bottom:80px;}
+.macbook-shell{height:520px;background:#0c0c0c;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.macbook-frame{position:relative;width:1040px;max-width:92%;background:#111;border-radius:14px 14px 0 0;padding:14px 14px 0;box-shadow:0 -10px 60px rgba(0,0,0,.5);}
 .macbook-cam{width:6px;height:6px;border-radius:50%;background:#333;margin:0 auto 8px;}
-.macbook-screen{background:#000;border-radius:6px 6px 0 0;overflow:hidden;height:400px;}
+.macbook-screen{position:relative;background:#000;border-radius:6px 6px 0 0;overflow:hidden;height:400px;}
 .macbook-screen iframe{border:0;transform-origin:top left;}
+.macbook-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,12,12,.9) 100%);pointer-events:none;}
 .macbook-base{height:16px;background:linear-gradient(180deg,#2a2a2a,#111);border-radius:0 0 10px 10px;}
-.macbook-cta{margin-top:-110px;position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;}
-.macbook-cta h2{font-family:'Lexend',sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:-0.02em;line-height:.9;font-size:clamp(3rem,9vw,7.5rem);color:rgba(255,255,255,.6);}
+.macbook-cta{margin-top:44px;position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;}
+.macbook-cta h2{font-family:'Lexend',sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:-0.02em;line-height:.9;font-size:clamp(2.4rem,7vw,5.5rem);color:rgba(255,255,255,.7);}
 .cta-side{display:flex;flex-direction:column;align-items:flex-end;gap:18px;}
 .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;border:2px solid var(--brand);font-weight:700;font-size:.95rem;padding:16px 30px;transition:all .2s;}
 .cta-btn:hover{background:transparent;color:var(--brand);}
@@ -258,7 +259,7 @@ footer{display:flex;flex-wrap:wrap;}
           <div class="laptop">
             <div class="macbook-cam" style="margin-bottom:6px;"></div>
             <div class="laptop-screen" style="height:280px;">
-              <iframe src="../devoted-domestics/index.html" loading="lazy" title="Devoted Domestics — live preview" data-frame-w="1440" data-frame-h="900"></iframe>
+              <iframe src="../devoted-domestics/index.html" loading="lazy" scrolling="no" title="Devoted Domestics — live preview" data-frame-w="1440" data-frame-h="900"></iframe>
             </div>
             <div class="laptop-stand"></div>
           </div>
@@ -334,7 +335,7 @@ footer{display:flex;flex-wrap:wrap;}
           </div>
         </div>
         <div class="compare-after" id="compareAfter">
-          <iframe src="../devoted-domestics/index.html" loading="lazy" title="Devoted Domestics — new website" data-frame-w="1440" data-frame-h="900" data-frame-ref="wrap"></iframe>
+          <iframe src="../devoted-domestics/index.html" loading="lazy" scrolling="no" title="Devoted Domestics — new website" data-frame-w="1440" data-frame-h="900" data-frame-ref="wrap"></iframe>
         </div>
         <div class="compare-handle" id="compareHandle"></div>
         <span class="compare-tag before-tag">Before</span>
@@ -366,10 +367,10 @@ footer{display:flex;flex-wrap:wrap;}
 
       <div class="gallery-card" style="background:var(--blue);">
         <div class="gallery-phones">
-          <div class="gallery-phone"><iframe src="../devoted-domestics/index.html" loading="lazy" data-frame-w="390" data-frame-h="843"></iframe></div>
-          <div class="gallery-phone"><iframe src="../devoted-domestics/index.html#services" loading="lazy" data-frame-w="390" data-frame-h="843"></iframe></div>
+          <div class="gallery-phone"><iframe src="../devoted-domestics/index.html" loading="lazy" scrolling="no" data-frame-w="390" data-frame-h="843"></iframe></div>
+          <div class="gallery-phone"><iframe src="../devoted-domestics/index.html#services" loading="lazy" scrolling="no" data-frame-w="390" data-frame-h="843"></iframe></div>
         </div>
-        <div class="gallery-desktop"><iframe src="../devoted-domestics/index.html" loading="lazy" data-frame-w="1440" data-frame-h="743"></iframe></div>
+        <div class="gallery-desktop"><iframe src="../devoted-domestics/index.html" loading="lazy" scrolling="no" data-frame-w="1440" data-frame-h="743"></iframe></div>
       </div>
     </div>
   </section>
@@ -380,7 +381,7 @@ footer{display:flex;flex-wrap:wrap;}
       <div class="macbook-frame">
         <div class="macbook-cam"></div>
         <div class="macbook-screen">
-          <iframe src="../devoted-domestics/index.html" loading="lazy" data-frame-w="1440" data-frame-h="900"></iframe>
+          <iframe src="../devoted-domestics/index.html" loading="lazy" scrolling="no" data-frame-w="1440" data-frame-h="900"></iframe>
         </div>
         <div class="macbook-base"></div>
       </div>

@@ -91,10 +91,10 @@ main{padding-top:110px;overflow:hidden;}
 .timeline-line{position:absolute;left:22px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.15);}
 .timeline-line-fill{position:absolute;left:22px;top:10px;width:2px;height:0;background:var(--brand);transition:height .1s linear;}
 .timeline-rows{display:flex;flex-direction:column;gap:60px;}
-.timeline-row{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:24px;}
+.timeline-row{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start;}
 .timeline-dot{position:absolute;left:-48px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:var(--dark-primary);transition:background .3s,border-color .3s,transform .3s;}
 .timeline-row.active .timeline-dot{background:var(--brand);border-color:var(--brand);transform:translateY(-50%) scale(1.15);}
-.timeline-label{font-family:'Lexend',sans-serif;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,2.8rem);color:transparent;-webkit-text-stroke:1px #ffffff;opacity:.45;transition:opacity .5s ease, -webkit-text-stroke-color .5s ease;}
+.timeline-label{position:relative;font-family:'Lexend',sans-serif;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,2.8rem);color:transparent;-webkit-text-stroke:1px #ffffff;opacity:.45;transition:opacity .5s ease, -webkit-text-stroke-color .5s ease;}
 .timeline-row.active .timeline-label{opacity:1;-webkit-text-stroke-color:var(--brand);}
 .timeline-copy{opacity:.4;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
 .timeline-row.active .timeline-copy{opacity:1;transform:translateY(0);}
@@ -302,24 +302,21 @@ footer{display:flex;flex-wrap:wrap;}
         <div class="timeline-line-fill" id="timelineFill"></div>
         <div class="timeline-rows">
           <div class="timeline-row">
-            <div class="timeline-dot"></div>
-            <div class="timeline-label font-lexend">Idea</div>
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Idea</div>
             <div class="timeline-copy">
               <h3>A Home Services Brand Needed a Home Online</h3>
               <p>Devoted Domestics had already earned real, repeat clients on trust and reputation alone. The idea: a site that felt just as warm and dependable as the cleaners themselves, so a stranger's first impression matched the service already proven in person.</p>
             </div>
           </div>
           <div class="timeline-row">
-            <div class="timeline-dot"></div>
-            <div class="timeline-label font-lexend">Challenge</div>
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Challenge</div>
             <div class="timeline-copy">
               <h3>Word-of-Mouth Only Goes So Far</h3>
               <p>Every enquiry arrived through Instagram DMs or a phone call, with no consistent way to explain services, share real reviews, or capture a lead outside business hours. Anyone comparing cleaning companies online found nothing to click on.</p>
             </div>
           </div>
           <div class="timeline-row">
-            <div class="timeline-dot"></div>
-            <div class="timeline-label font-lexend">Solution</div>
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Solution</div>
             <div class="timeline-copy">
               <h3>A Booking-First Website, Built to Convert</h3>
               <p>A single-page site structured around the exact questions a new client asks: what do you clean, is it safe, and how fast can I book? A trust-building hero, six service cards, a simple 3-step process, real testimonials, and a lead form feeding straight into the enquiry inbox.</p>

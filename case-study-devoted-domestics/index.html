@@ -136,7 +136,7 @@ main{padding-top:110px;overflow:hidden;}
 .gallery-phones{display:flex;gap:16px;flex-shrink:0;}
 .gallery-phone{width:110px;aspect-ratio:157/323;border-radius:16px;overflow:hidden;background:#000;flex-shrink:0;}
 .gallery-phone iframe{border:0;transform-origin:top left;}
-.gallery-desktop{width:620px;max-width:100%;height:320px;border-radius:12px;overflow:hidden;background:#000;}
+.gallery-desktop{width:620px;max-width:100%;aspect-ratio:620/320;border-radius:12px;overflow:hidden;background:#000;}
 .gallery-desktop iframe{border:0;transform-origin:top left;}
 @media (max-width:1023px){ .gallery-phones{display:none;} }
 
@@ -145,7 +145,7 @@ main{padding-top:110px;overflow:hidden;}
 .macbook-shell{height:520px;background:#0c0c0c;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
 .macbook-frame{position:relative;width:1040px;max-width:92%;background:#111;border-radius:14px 14px 0 0;padding:14px 14px 0;box-shadow:0 -10px 60px rgba(0,0,0,.5);}
 .macbook-cam{width:6px;height:6px;border-radius:50%;background:#333;margin:0 auto 8px;}
-.macbook-screen{position:relative;background:#000;border-radius:6px 6px 0 0;overflow:hidden;height:400px;}
+.macbook-screen{position:relative;background:#000;border-radius:6px 6px 0 0;overflow:hidden;aspect-ratio:1012/400;}
 .macbook-screen iframe{border:0;transform-origin:top left;}
 .macbook-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,12,12,.9) 100%);pointer-events:none;}
 .macbook-base{height:16px;background:linear-gradient(180deg,#2a2a2a,#111);border-radius:0 0 10px 10px;}
@@ -229,6 +229,7 @@ footer{display:flex;flex-wrap:wrap;}
   .cta-side{align-items:flex-start;}
   .cta-side p{text-align:left;}
   .footer-right{align-items:flex-start;}
+  .macbook-shell{height:220px;}
 }
 </style>
 </head>

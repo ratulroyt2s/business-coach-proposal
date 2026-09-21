@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case Study: Cormorant Point Hotel — Think To Share</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/*
+  Structural / visual clone of thinktoshare.com/case-studies/robotic-website-redesign-development,
+  reused from case-study-larkspur-wealth with a third client accent palette (terracotta/sand/coral/
+  deep-teal) and its own story: a hospitality redesign about commission leakage to OTAs, not
+  credibility (Larkspur) or having no site at all (Devoted Domestics). Genuine before/after —
+  the comparison slider embeds the real old and new hotel sites built alongside this page.
+*/
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --dark-primary:#1a1a1a;
+  --dark-1:#232323;
+  --dark-2:#1d1d1d;
+  --dark-4:#131313;
+  --dark-5:#121212;
+  --dark-7:#0e0e0e;
+  --dark-8:#222222;
+  --dark-9:#a1a1a1;
+  --dark-10:#2d2d2d;
+  --brand:#f56134;
+  --brand-dark:#c94422;
+  --terracotta:#C1633D;
+  --sand:#F5E6D8;
+  --theme-terracotta:#E3B79B;
+  --coral:#F3C9B0;
+  --deepteal:#16302F;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--dark-primary);color:var(--white);line-height:1.5;overflow-x:hidden;}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 20px;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+.font-lexend{font-family:'Lexend',sans-serif;}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(26,26,26,0.85);backdrop-filter:blur(10px);}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
+.header-inner img{height:40px;width:auto;}
+.menu-btn{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--dark-1);}
+.menu-btn svg{width:22px;height:18px;}
+
+main{padding-top:110px;overflow:hidden;}
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero-desktop{display:none;}
+@media (min-width:1024px){ .hero-desktop{display:block;} .hero-mobile{display:none;} }
+.hero-panel{position:relative;background:var(--terracotta);border-radius:40px;height:560px;overflow:hidden;margin:0 32px;}
+.ghost-text{position:absolute;top:70px;width:100%;text-align:center;font-weight:800;color:rgba(255,255,255,0.4);font-size:clamp(6rem,17vw,14rem);letter-spacing:-0.04em;line-height:1;white-space:nowrap;}
+.notch-bar{position:absolute;top:0;left:50%;transform:translateX(-50%);max-width:90%;padding:0 60px;text-align:center;white-space:nowrap;}
+.notch-bar::before,.notch-bar::after{content:'';position:absolute;top:0;width:36px;height:42px;background:var(--terracotta);}
+.notch-bar::before{left:-36px;border-radius:0 0 40px 0;}
+.notch-bar::after{right:-36px;border-radius:0 0 0 40px;}
+.notch-inner{background:var(--dark-primary);border-radius:0 0 40px 40px;padding:18px 0 22px;color:var(--white);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.4rem);}
+.side-label{position:absolute;bottom:22px;right:28px;font-family:'Lexend',sans-serif;font-weight:600;letter-spacing:0.02em;color:rgba(255,255,255,0.6);font-size:clamp(2rem,4.2vw,3.2rem);text-transform:uppercase;}
+.hero-device{position:absolute;top:52%;left:50%;transform:translate(-50%,-48%);width:560px;max-width:80%;}
+.hero-mobile-panel{background:var(--terracotta);border-radius:0;min-height:240px;display:grid;place-items:center;text-align:center;padding:40px 24px;}
+.hero-mobile-panel h1{font-weight:800;font-size:2.4rem;color:var(--dark-primary);}
+
+/* laptop device frame (used across hero + gallery + macbook section) */
+.laptop{background:#000;border-radius:10px;padding:10px 10px 0;box-shadow:0 30px 60px rgba(0,0,0,.4);}
+.laptop-screen{background:#000;border-radius:5px;overflow:hidden;position:relative;}
+.laptop-screen iframe{border:0;transform-origin:top left;}
+.laptop-stand{height:12px;background:#111;border-radius:0 0 8px 8px;}
+
+/* ── OVERVIEW ───────────────────────────────────────── */
+#overview{padding:100px 0 0;}
+#overview h2{font-weight:800;font-size:clamp(1.8rem,3.4vw,3rem);}
+#overview > .container > p{font-size:clamp(1.1rem,1.6vw,1.4rem);margin-top:16px;max-width:760px;}
+.meta-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:40px;position:relative;}
+.meta-row::before{content:'';position:absolute;left:0;right:0;top:50%;height:2px;background:var(--sand);opacity:.5;z-index:0;}
+.meta-card{position:relative;z-index:1;flex:1 1 170px;background:var(--sand);color:var(--dark-primary);border-radius:20px;padding:24px 20px;}
+.meta-card h3{font-size:0.85rem;font-weight:600;color:rgba(26,26,26,.6);}
+.meta-card p{font-size:1.2rem;font-weight:800;margin-top:8px;}
+
+/* ── TIMELINE ───────────────────────────────────────── */
+#timeline{padding:90px 0;}
+.timeline-wrap{position:relative;padding-left:48px;}
+.timeline-line{position:absolute;left:22px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.15);}
+.timeline-line-fill{position:absolute;left:22px;top:10px;width:2px;height:0;background:var(--brand);transition:height .1s linear;}
+.timeline-rows{display:flex;flex-direction:column;gap:60px;}
+.timeline-row{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start;}
+.timeline-dot{position:absolute;left:-48px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:var(--dark-primary);transition:background .3s,border-color .3s,transform .3s;}
+.timeline-row.active .timeline-dot{background:var(--brand);border-color:var(--brand);transform:translateY(-50%) scale(1.15);}
+.timeline-label{position:relative;font-family:'Lexend',sans-serif;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,2.8rem);color:transparent;-webkit-text-stroke:1px #ffffff;opacity:.45;transition:opacity .5s ease, -webkit-text-stroke-color .5s ease;}
+.timeline-row.active .timeline-label{opacity:1;-webkit-text-stroke-color:var(--brand);}
+.timeline-copy{opacity:.4;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.timeline-row.active .timeline-copy{opacity:1;transform:translateY(0);}
+.timeline-copy h3{font-weight:700;font-size:clamp(1.4rem,2.4vw,2rem);}
+.timeline-copy p{margin-top:16px;font-size:clamp(1rem,1.4vw,1.25rem);color:rgba(255,255,255,.8);}
+
+/* ── BEFORE / AFTER SLIDER ─────────────────────────── */
+#compare{padding:20px 0 100px;}
+.compare-note{text-align:center;font-size:.85rem;color:var(--dark-9);margin-bottom:18px;}
+.compare-wrap{position:relative;border-radius:24px;overflow:hidden;width:100%;max-width:720px;aspect-ratio:1440/900;margin:0 auto;user-select:none;background:#000;}
+.compare-before,.compare-after{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.compare-before{z-index:1;background:#000;}
+.compare-after{z-index:2;width:var(--reveal,50%);border-right:2px solid var(--brand);}
+.compare-before iframe,.compare-after iframe{width:100%;height:100%;border:0;transform-origin:top left;}
+.compare-handle{position:absolute;top:0;bottom:0;left:var(--reveal,50%);width:28px;transform:translateX(-50%);z-index:3;cursor:ew-resize;touch-action:none;}
+.compare-handle::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--brand);transform:translateX(-50%);}
+.compare-handle::after{content:'⇔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:var(--brand);border-radius:50%;display:grid;place-items:center;font-size:1.2rem;color:#fff;}
+.compare-tag{position:absolute;top:16px;z-index:4;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.55);padding:6px 12px;border-radius:99px;}
+.compare-tag.before-tag{left:16px;}
+.compare-tag.after-tag{right:16px;}
+
+/* ── TESTIMONIAL ────────────────────────────────────── */
+#testimonial{background:#1E1E1E;padding:100px 0;text-align:center;}
+#testimonial h2{font-weight:700;font-size:clamp(1.8rem,4.4vw,3.6rem);line-height:1.2;}
+.quote-block{margin-top:44px;position:relative;max-width:760px;margin-left:auto;margin-right:auto;padding:40px 10px;}
+.quote-block svg{width:42px;opacity:.3;}
+.quote-block .q-top{position:absolute;top:0;left:50%;transform:translateX(-50%);}
+.quote-block .q-bottom{position:absolute;bottom:0;right:50%;transform:translateX(50%) rotate(180deg);}
+.quote-name{font-weight:600;font-size:1.15rem;margin-top:6px;}
+.quote-role{font-weight:600;font-size:1.15rem;color:var(--dark-9);margin-bottom:18px;}
+.quote-text{font-size:1.2rem;}
+.quote-caveat{margin-top:22px;font-size:.75rem;color:var(--dark-9);opacity:.7;}
+
+/* ── GALLERY ────────────────────────────────────────── */
+#gallery{padding:100px 0;}
+#gallery h2{text-align:center;font-weight:700;font-size:clamp(2rem,5vw,4rem);margin-bottom:56px;}
+.gallery-note{text-align:center;font-size:.8rem;color:var(--dark-9);margin-top:-40px;margin-bottom:56px;}
+.gallery-card{border-radius:28px;padding:36px 24px;display:flex;flex-direction:column;gap:24px;}
+@media (min-width:1024px){
+  .gallery-card{flex-direction:row;align-items:flex-end;gap:40px;padding:40px 40px 48px 60px;}
+}
+.gallery-phones{display:flex;gap:16px;flex-shrink:0;}
+.gallery-phone{width:110px;aspect-ratio:157/323;border-radius:16px;overflow:hidden;background:#000;flex-shrink:0;}
+.gallery-phone iframe{border:0;transform-origin:top left;}
+.gallery-desktop{width:620px;max-width:100%;aspect-ratio:620/320;border-radius:12px;overflow:hidden;background:#000;}
+.gallery-desktop iframe{border:0;transform-origin:top left;}
+@media (max-width:1023px){ .gallery-phones{display:none;} }
+
+/* ── MACBOOK / CTA ──────────────────────────────────── */
+#macbook{position:relative;padding-bottom:80px;}
+.macbook-shell{height:520px;background:#0c0c0c;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.macbook-frame{position:relative;width:1040px;max-width:92%;background:#111;border-radius:14px 14px 0 0;padding:14px 14px 0;box-shadow:0 -10px 60px rgba(0,0,0,.5);}
+.macbook-cam{width:6px;height:6px;border-radius:50%;background:#333;margin:0 auto 8px;}
+.macbook-screen{position:relative;background:#000;border-radius:6px 6px 0 0;overflow:hidden;aspect-ratio:1012/400;}
+.macbook-screen iframe{border:0;transform-origin:top left;}
+.macbook-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,12,12,.9) 100%);pointer-events:none;}
+.macbook-base{height:16px;background:linear-gradient(180deg,#2a2a2a,#111);border-radius:0 0 10px 10px;}
+.macbook-cta{margin-top:44px;position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;}
+.macbook-cta h2{font-family:'Lexend',sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:-0.02em;line-height:.9;font-size:clamp(2.4rem,7vw,5.5rem);color:rgba(255,255,255,.7);}
+.cta-side{display:flex;flex-direction:column;align-items:flex-end;gap:18px;}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;border:2px solid var(--brand);font-weight:700;font-size:.95rem;padding:16px 30px;transition:all .2s;}
+.cta-btn:hover{background:transparent;color:var(--brand);}
+.cta-side p{font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:1rem;text-align:right;}
+
+/* ── CONTACT ────────────────────────────────────────── */
+#contact{padding:110px 0 0;}
+.contact-grid{display:flex;flex-wrap:wrap;border-radius:28px;overflow:hidden;}
+.contact-info{flex:1 1 380px;padding:40px 20px;display:flex;flex-direction:column;gap:36px;}
+.info-item{display:flex;gap:20px;align-items:flex-start;}
+.info-icon{flex-shrink:0;width:52px;height:52px;border:1px solid var(--theme-terracotta);border-radius:10px;display:grid;place-items:center;color:var(--theme-terracotta);}
+.info-icon svg{width:24px;height:24px;}
+.info-item h4{font-weight:600;font-size:1.15rem;margin-bottom:4px;}
+.info-item .sub{font-size:.85rem;color:var(--dark-9);margin-bottom:8px;}
+.info-item a{font-weight:600;}
+.info-item a:hover{color:var(--dark-9);}
+.contact-form-panel{flex:1 1 460px;background:var(--coral);color:#000;padding:48px 32px;}
+.contact-form-panel h2{font-weight:800;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:32px;}
+.field{position:relative;margin-bottom:28px;}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:2px solid #000;padding:10px 0;font-size:.95rem;font-weight:600;color:#000;font-family:inherit;}
+.field textarea{resize:vertical;min-height:90px;}
+.field label{position:absolute;left:0;top:10px;font-size:.95rem;font-weight:600;pointer-events:none;transition:.2s;}
+.field input:focus + label,.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,.field textarea:not(:placeholder-shown) + label,
+.field.filled label{top:-14px;font-size:.72rem;}
+.field select{cursor:pointer;}
+.field-row{display:flex;gap:20px;flex-wrap:wrap;}
+.field-row .field{flex:1 1 180px;}
+.submit-btn{width:100%;background:#000;color:#fff;border:2px solid #000;padding:16px;font-weight:600;font-size:1rem;margin-top:8px;transition:all .2s;}
+.submit-btn:hover{background:transparent;color:#000;}
+.form-thanks{display:none;text-align:center;padding:60px 0;}
+.form-thanks.show{display:block;}
+.form-thanks p:first-child{font-weight:800;font-size:2rem;margin-bottom:8px;}
+
+/* ── COFFEE BAR ─────────────────────────────────────── */
+.coffee-bar{background:var(--dark-7);text-align:center;padding:60px 20px;}
+.coffee-bar p{font-size:clamp(1.4rem,4vw,2.6rem);margin-bottom:16px;}
+.coffee-bar a{color:var(--brand);font-weight:700;font-size:clamp(1.1rem,2.4vw,1.6rem);border-bottom:2px solid var(--brand);padding-bottom:4px;}
+.coffee-bar a:hover{color:var(--brand-dark);border-color:var(--brand-dark);}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer{display:flex;flex-wrap:wrap;}
+.footer-left{flex:1 1 560px;background:var(--dark-primary);padding:70px 20px 30px;}
+.footer-left-inner{display:flex;flex-wrap:wrap;gap:40px;max-width:640px;}
+.footer-left img.logo{height:40px;width:auto;margin-bottom:36px;}
+.social-row{display:flex;gap:14px;margin-bottom:20px;}
+.social-circle{width:46px;height:46px;border-radius:50%;background:var(--dark-10);display:grid;place-items:center;transition:.2s;}
+.social-circle:hover{background:var(--dark-8);}
+.social-circle svg{width:18px;height:18px;fill:#fff;}
+.badge-row{display:flex;gap:10px;}
+.badge-row img{width:70px;}
+.footer-links h4{font-weight:600;font-size:1.2rem;margin-bottom:24px;}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.footer-links a{font-size:.9rem;font-weight:500;color:var(--dark-9);}
+.footer-links a:hover{color:#fff;}
+.footer-right{flex:1 1 380px;background:var(--dark-8);padding:60px 20px;display:flex;flex-direction:column;align-items:flex-end;gap:32px;}
+.office-block{max-width:280px;width:100%;}
+.office-block h5{font-weight:600;font-size:1.05rem;margin-bottom:10px;}
+.office-block p{font-size:.85rem;color:var(--dark-9);margin-bottom:8px;}
+.office-block a.phone{font-size:.85rem;font-weight:700;letter-spacing:.05em;color:var(--dark-9);}
+.office-block a.phone:hover{color:#fff;}
+.footer-bottom{background:var(--dark-7);text-align:center;padding:22px 20px;font-size:.85rem;}
+.footer-bottom span{text-decoration:underline;text-underline-offset:4px;}
+
+/* ── FLOATING BUTTONS ───────────────────────────────── */
+.float-btn{position:fixed;right:20px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:998;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+.float-btn svg{width:26px;height:26px;fill:#fff;}
+.float-skype{bottom:96px;background:#00aff0;}
+.float-whatsapp{bottom:26px;background:#25D366;}
+
+@media (max-width:1023px){
+  .container{padding:0 16px;}
+  #overview,#timeline,#contact{padding-left:0;padding-right:0;}
+  .timeline-row{grid-template-columns:1fr;gap:8px;}
+  .macbook-cta{flex-direction:column;align-items:flex-start;}
+  .cta-side{align-items:flex-start;}
+  .cta-side p{text-align:left;}
+  .footer-right{align-items:flex-start;}
+  .macbook-shell{height:220px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────── -->
+<header>
+  <div class="container header-inner">
+    <a href="https://thinktoshare.com/" target="_blank" rel="noopener" aria-label="Think To Share">
+      <img src="assets/logo.png" alt="Think To Share" height="40" />
+    </a>
+    <button class="menu-btn" aria-label="Menu">
+      <svg viewBox="0 0 25 19" fill="none"><path d="M13.9583 18.25H2.29165C1.41665 18.25 0.833313 17.6667 0.833313 16.7917C0.833313 15.9167 1.41665 15.3333 2.29165 15.3333H13.9583C14.8333 15.3333 15.4166 15.9167 15.4166 16.7917C15.4166 17.6667 14.8333 18.25 13.9583 18.25ZM22.7083 10.9583H2.29165C1.41665 10.9583 0.833313 10.375 0.833313 9.5C0.833313 8.625 1.41665 8.04167 2.29165 8.04167H22.7083C23.5833 8.04167 24.1666 8.625 24.1666 9.5C24.1666 10.375 23.5833 10.9583 22.7083 10.9583ZM22.7083 3.66667H11.0416C10.1666 3.66667 9.58331 3.08333 9.58331 2.20833C9.58331 1.33333 10.1666 0.75 11.0416 0.75H22.7083C23.5833 0.75 24.1666 1.33333 24.1666 2.20833C24.1666 3.08333 23.5833 3.66667 22.7083 3.66667Z" fill="white"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero-desktop">
+    <div class="container">
+      <div class="hero-panel">
+        <div class="ghost-text font-lexend">Cormorant</div>
+        <div class="notch-bar"><div class="notch-inner">Cormorant Point Hotel</div></div>
+        <div class="side-label font-lexend">Hotel</div>
+        <div class="hero-device">
+          <div class="laptop">
+            <div class="macbook-cam" style="margin-bottom:6px;"></div>
+            <div class="laptop-screen" style="height:280px;">
+              <iframe src="../cormorant-point-new/index.html" loading="lazy" scrolling="no" title="Cormorant Point Hotel — live preview" data-frame-w="1440" data-frame-h="900"></iframe>
+            </div>
+            <div class="laptop-stand"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero-mobile">
+    <div class="hero-mobile-panel">
+      <h1>Cormorant Point Hotel</h1>
+    </div>
+  </section>
+
+  <!-- ── OVERVIEW ──────────────────────────────────────── -->
+  <section id="overview">
+    <div class="container">
+      <h2>Brief Description</h2>
+      <p>Cormorant Point Hotel had loyal repeat guests and a genuinely private beach &mdash; but most first-time visitors were booking through OTAs instead of the hotel's own site, handing over 15&ndash;20% of every stay in commission. Think To Share rebuilt the site around one goal: make booking direct the easy choice.</p>
+      <div class="meta-row">
+        <div class="meta-card"><h3>Time</h3><p>6 Weeks</p></div>
+        <div class="meta-card"><h3>Team</h3><p>4 Members</p></div>
+        <div class="meta-card"><h3>Platforms</h3><p>Web</p></div>
+        <div class="meta-card"><h3>Type</h3><p>Website Redesign</p></div>
+        <div class="meta-card"><h3>Industry</h3><p>Hospitality / Boutique Hotel</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ──────────────────────────────────────── -->
+  <section id="timeline">
+    <div class="container">
+      <div class="timeline-wrap">
+        <div class="timeline-line"></div>
+        <div class="timeline-line-fill" id="timelineFill"></div>
+        <div class="timeline-rows">
+          <div class="timeline-row">
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Idea</div>
+            <div class="timeline-copy">
+              <h3>A Boutique Hotel Needed Guests to Book Direct</h3>
+              <p>Cormorant Point had everything a guest actually wants &mdash; a private beach, oceanfront dining, genuine repeat visitors &mdash; but most first-time bookings were happening on Expedia and Booking.com instead of the hotel's own site. The idea: a website guests would actually want to book on.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Challenge</div>
+            <div class="timeline-copy">
+              <h3>A Buried Booking Flow Was Pushing Guests to OTAs</h3>
+              <p>The old site's availability form sat beneath the fold, didn't work on mobile, and openly suggested guests "check our partner travel sites" for availability. Every visitor who gave up on that form became a booking.com commission instead of a direct guest.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label font-lexend"><span class="timeline-dot"></span>Solution</div>
+            <div class="timeline-copy">
+              <h3>A Visual, Booking-First Redesign That Keeps Guests On-Site</h3>
+              <p>A full-bleed, photography-led site with the booking bar front and center on every page, a scrollable room gallery with live pricing, and a direct-book rate guarantee reinforced from the hero straight through to checkout.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BEFORE / AFTER ────────────────────────────────── -->
+  <section id="compare">
+    <div class="container">
+      <p class="compare-note">Drag to compare — Cormorant Point's actual site, before and after the redesign.</p>
+      <div class="compare-wrap" id="compareWrap" style="--reveal:50%;">
+        <div class="compare-before">
+          <iframe src="../cormorant-point-old/index.html" loading="lazy" scrolling="no" title="Cormorant Point Hotel — old website" data-frame-w="960" data-frame-h="900"></iframe>
+        </div>
+        <div class="compare-after" id="compareAfter">
+          <iframe src="../cormorant-point-new/index.html" loading="lazy" scrolling="no" title="Cormorant Point Hotel — new website" data-frame-w="1440" data-frame-h="900" data-frame-ref="wrap"></iframe>
+        </div>
+        <div class="compare-handle" id="compareHandle"></div>
+        <span class="compare-tag before-tag">Before</span>
+        <span class="compare-tag after-tag">After</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL ───────────────────────────────────── -->
+  <section id="testimonial">
+    <div class="container">
+      <h2>What they said is all that<br>matters to us!</h2>
+      <div class="quote-block">
+        <svg class="q-top" viewBox="0 0 38 28" fill="none"><path fill="#fff" fill-opacity=".3" d="M20.9 18.692v-.948A17.02 17.02 0 0 1 35.908.77C37.026.635 38 1.536 38 2.66c0 .971-.734 1.768-1.697 1.89a13.345 13.345 0 0 0-7.681 3.707c-.712.7-.2 1.89.798 1.887h.028c4.9 0 8.787 4.04 8.54 8.993-.214 4.33-3.764 7.88-8.095 8.096a8.519 8.519 0 0 1-8.993-8.542ZM0 18.502v-.758A17.02 17.02 0 0 1 15.008.77C16.126.635 17.1 1.536 17.1 2.66c0 .97-.734 1.768-1.697 1.89a13.342 13.342 0 0 0-7.68 3.707c-.711.7-.2 1.89.799 1.887h.03c4.748 0 8.548 3.8 8.548 8.547a8.516 8.516 0 0 1-8.799 8.549C3.645 27.11 0 23.16 0 18.503Z"/></svg>
+        <p class="quote-name">General Manager</p>
+        <p class="quote-role">Cormorant Point Hotel</p>
+        <p class="quote-text">We used to watch guests abandon our booking form and go straight to Expedia. Now direct bookings are up, and we keep the commission instead of handing it away.</p>
+        <svg class="q-bottom" viewBox="0 0 38 28" fill="none"><path fill="#fff" fill-opacity=".3" d="M20.9 18.692v-.948A17.02 17.02 0 0 1 35.908.77C37.026.635 38 1.536 38 2.66c0 .971-.734 1.768-1.697 1.89a13.345 13.345 0 0 0-7.681 3.707c-.712.7-.2 1.89.798 1.887h.028c4.9 0 8.787 4.04 8.54 8.993-.214 4.33-3.764 7.88-8.095 8.096a8.519 8.519 0 0 1-8.993-8.542ZM0 18.502v-.758A17.02 17.02 0 0 1 15.008.77C16.126.635 17.1 1.536 17.1 2.66c0 .97-.734 1.768-1.697 1.89a13.342 13.342 0 0 0-7.68 3.707c-.711.7-.2 1.89.799 1.887h.03c4.748 0 8.548 3.8 8.548 8.547a8.516 8.516 0 0 1-8.799 8.549C3.645 27.11 0 23.16 0 18.503Z"/></svg>
+      </div>
+      <p class="quote-caveat">Sample quote — swap in the client's actual words once collected.</p>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ───────────────────────────────────────── -->
+  <section id="gallery">
+    <div class="container">
+      <h2>Presenting the Website</h2>
+      <p class="gallery-note">Live preview, mobile and desktop — the source page animates several of these as a scroll-driven carousel.</p>
+
+      <div class="gallery-card" style="background:var(--deepteal);">
+        <div class="gallery-phones">
+          <div class="gallery-phone"><iframe src="../cormorant-point-new/index.html" loading="lazy" scrolling="no" data-frame-w="390" data-frame-h="843"></iframe></div>
+          <div class="gallery-phone"><iframe src="../cormorant-point-new/index.html#rooms" loading="lazy" scrolling="no" data-frame-w="390" data-frame-h="843"></iframe></div>
+        </div>
+        <div class="gallery-desktop"><iframe src="../cormorant-point-new/index.html" loading="lazy" scrolling="no" data-frame-w="1440" data-frame-h="743"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MACBOOK / CTA ─────────────────────────────────── -->
+  <section id="macbook">
+    <div class="macbook-shell">
+      <div class="macbook-frame">
+        <div class="macbook-cam"></div>
+        <div class="macbook-screen">
+          <iframe src="../cormorant-point-new/index.html" loading="lazy" scrolling="no" data-frame-w="1440" data-frame-h="900"></iframe>
+        </div>
+        <div class="macbook-base"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="macbook-cta">
+        <h2 class="font-lexend">think<br>smarter</h2>
+        <div class="cta-side">
+          <a href="https://calendly.com/thinktoshareitsolutions/book-a-demo" target="_blank" rel="noopener" class="cta-btn">
+            <span>&#8594;</span> Connect With Us
+          </a>
+          <p>Build Your Website Today</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 25 25" fill="currentColor"><path d="M17.188 0H3.124A3.128 3.128 0 0 0 0 3.125V18.75a.78.78 0 0 0 1.281.6l4.47-3.725h11.436a3.128 3.128 0 0 0 3.125-3.125V3.125A3.128 3.128 0 0 0 17.188 0Zm1.562 12.5c0 .86-.7 1.563-1.563 1.563H5.47a.78.78 0 0 0-.5.18l-3.407 2.84V3.125c0-.86.7-1.563 1.563-1.563h14.063c.862 0 1.562.702 1.562 1.563V12.5Z"/></svg>
+            </div>
+            <div>
+              <h4>Mail Us</h4>
+              <p class="sub">Our friendly team is here to help</p>
+              <a href="mailto:contact@thinktoshare.com">contact@thinktoshare.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 25 25" fill="currentColor"><path d="M20.672 3.097C18.606 1.1 15.859 0 12.937 0 10.017 0 7.27 1.1 5.205 3.097 3.138 5.094 2 7.749 2 10.574c0 5.713 5.588 10.465 8.59 13.019.418.354.778.66 1.065.92.36.325.821.487 1.283.487a1.91 1.91 0 0 0 1.282-.487c.287-.26.647-.566 1.065-.92 3.002-2.554 8.59-7.306 8.59-13.02 0-2.824-1.138-5.479-3.203-7.476Z"/></svg>
+            </div>
+            <div>
+              <h4>Sales &amp; Operation</h4>
+              <p class="sub">Come to say Hello</p>
+              <a href="https://maps.app.goo.gl/LoZX1h1CSSz2KQK78" target="_blank" rel="noopener">66 W Flagler Street, Suite 900, PMB 10646. Miami, FL 33130</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 25 25" fill="currentColor"><path d="M14.844 4.688H5.469a.782.782 0 0 0 0 1.562h9.375a.782.782 0 0 0 0-1.563Zm-3.125 3.125h-6.25a.782.782 0 0 0 0 1.562h6.25a.782.782 0 0 0 0-1.563ZM17.188 0H3.124A3.128 3.128 0 0 0 0 3.125V18.75a.78.78 0 0 0 1.281.6l4.47-3.725h11.436a3.128 3.128 0 0 0 3.125-3.125V3.125A3.128 3.128 0 0 0 17.188 0Z"/></svg>
+            </div>
+            <div>
+              <h4>Call Us</h4>
+              <p class="sub">Choose a sweet time for you</p>
+              <a href="tel:+18882116210">+1 (888) 211-6210</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-panel">
+          <h2>Got ideas? We&rsquo;ve got the skills.</h2>
+          <form id="caseForm">
+            <div class="field"><input type="text" placeholder=" " required /><label>Your Name</label></div>
+            <div class="field"><input type="email" placeholder=" " required /><label>Email</label></div>
+            <div class="field-row">
+              <div class="field"><input type="text" placeholder=" " /><label>Country</label></div>
+              <div class="field"><input type="tel" placeholder=" " /><label>Phone</label></div>
+            </div>
+            <div class="field filled">
+              <select required>
+                <option value="" disabled selected></option>
+                <option>New Website</option>
+                <option>Website Redesign</option>
+                <option>Booking / Automation</option>
+                <option>Other</option>
+              </select>
+              <label>Area of Interest?</label>
+            </div>
+            <div class="field"><textarea placeholder=" "></textarea><label>Message</label></div>
+            <button type="submit" class="submit-btn">Let&rsquo;s Connect</button>
+          </form>
+          <div class="form-thanks" id="formThanks">
+            <p>Thank You!</p>
+            <p>Welcome to Innovation!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── COFFEE BAR ────────────────────────────────────── -->
+<div class="coffee-bar">
+  <p>Let&rsquo;s talk over some virtual coffee!</p>
+  <a href="mailto:contact@thinktoshare.com">contact@thinktoshare.com</a>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-left-inner">
+      <div style="flex:1 1 260px;">
+        <a href="https://thinktoshare.com/" target="_blank" rel="noopener">
+          <img class="logo" src="assets/logo.png" alt="Think To Share" />
+        </a>
+        <div class="social-row">
+          <a class="social-circle" href="https://www.linkedin.com/company/think-to-share/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3M447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2c-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3c94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+          <a class="social-circle" href="https://www.facebook.com/thinktoshareservices/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 320 512"><path d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8z"/></svg></a>
+          <a class="social-circle" href="https://twitter.com/think_to_share" target="_blank" rel="noopener" aria-label="X / Twitter"><svg viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg></a>
+          <a class="social-circle" href="https://www.instagram.com/thinktoshare/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg></a>
+        </div>
+        <div class="badge-row">
+          <a href="https://clutch.co/profile/think-share" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/thinktoshare/images/home/achivement/Clutch.png?tr=pr-true,w-200,f-avif,q-90" alt="Clutch" /></a>
+          <a href="https://www.goodfirms.co/company/think-to-share" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/thinktoshare/images/home/achivement/Goodfirms.png?tr=pr-true,w-200,f-avif,q-90" alt="GoodFirms" /></a>
+          <a href="https://www.designrush.com/agency/profile/think-to-share" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/thinktoshare/images/home/achivement/Designrush.png?tr=pr-true,w-200,f-avif,q-90" alt="DesignRush" /></a>
+        </div>
+      </div>
+      <div class="footer-links" style="flex:1 1 220px;">
+        <h4>Discover Think To Share</h4>
+        <ul>
+          <li><a href="https://thinktoshare.com/web-development-company" target="_blank" rel="noopener">Web Development</a></li>
+          <li><a href="https://thinktoshare.com/ui-ux-design-and-consulting" target="_blank" rel="noopener">UI / UX Design</a></li>
+          <li><a href="https://thinktoshare.com/software-development-company" target="_blank" rel="noopener">Software Development</a></li>
+          <li><a href="https://thinktoshare.com/mobile-app-development-company" target="_blank" rel="noopener">Mobile App Development</a></li>
+          <li><a href="https://thinktoshare.com/ai-ml-solutions" target="_blank" rel="noopener">AI/ML Solutions</a></li>
+          <li><a href="https://thinktoshare.com/cloud-solutions-provider" target="_blank" rel="noopener">Cloud Solutions</a></li>
+          <li><a href="https://thinktoshare.com/devops-service-provider" target="_blank" rel="noopener">DevOps Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-right">
+    <div class="office-block">
+      <h5>USA</h5>
+      <p><a href="https://maps.app.goo.gl/LoZX1h1CSSz2KQK78" target="_blank" rel="noopener">78 SW 7th St, Miami, FL 33130</a></p>
+      <a class="phone" href="tel:+19147681404">+1 (914) 768-1404</a>
+    </div>
+    <div class="office-block">
+      <h5>India</h5>
+      <p><a href="https://maps.app.goo.gl/h8MXhMW8MXakXEjd9" target="_blank" rel="noopener">Noapara Bi Lane, Shyamnagar, 24 Parganas (N). Po: Garulia, Noapara, Shyamnagar, Kolkata</a></p>
+      <a class="phone" href="tel:+919883260219">+91 9883 2602 19</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>Copyright &copy; 2026 - <span>Think To Share</span> &nbsp;|&nbsp; <a href="https://thinktoshare.com/sitemap" target="_blank" rel="noopener"><span>Sitemap</span></a></p>
+</div>
+
+<!-- ── FLOATING BUTTONS ─────────────────────────────── -->
+<a class="float-btn float-skype" href="https://join.skype.com/invite/pltHZIaYANPl" target="_blank" rel="noopener" aria-label="Skype">
+  <svg viewBox="0 0 32 32"><path d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.17 13.17 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.06 13.06 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.1 16.1 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z"/></svg>
+</a>
+<a class="float-btn float-whatsapp" href="https://wa.me/+918697369074" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.17 13.17 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.06 13.06 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.1 16.1 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z"/></svg>
+</a>
+
+<script>
+  // Responsive device-frame previews: each iframe declares its natural
+  // (unscaled) site width/height via data-frame-w/h; on load and resize we
+  // measure its actual rendered box and scale the iframe to fill it exactly.
+  (function(){
+    function fitFrames(){
+      document.querySelectorAll('iframe[data-frame-w]').forEach(function(f){
+        var nw = parseFloat(f.dataset.frameW);
+        var nh = parseFloat(f.dataset.frameH);
+        var refEl = f.dataset.frameRef === 'wrap' ? document.getElementById('compareWrap') : f.parentElement;
+        var w = refEl.clientWidth;
+        if(!w) return;
+        var scale = w / nw;
+        f.style.width = nw + 'px';
+        f.style.height = nh + 'px';
+        f.style.transformOrigin = 'top left';
+        f.style.transform = 'scale(' + scale + ')';
+      });
+    }
+    window.addEventListener('load', fitFrames);
+    window.addEventListener('resize', fitFrames);
+    fitFrames();
+  })();
+
+  // scroll-driven timeline: fills the vertical line and lights up each
+  // IDEA/CHALLENGE/SOLUTION row as it crosses the trigger line
+  (function(){
+    var wrap = document.querySelector('.timeline-wrap');
+    var fill = document.getElementById('timelineFill');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.timeline-row'));
+    if(!wrap || !fill || !rows.length) return;
+    function update(){
+      var rect = wrap.getBoundingClientRect();
+      var triggerY = window.innerHeight * 0.6;
+      var maxH = rect.height - 20;
+      var progressPx = triggerY - (rect.top + 10);
+      var pct = Math.max(0, Math.min(1, maxH > 0 ? progressPx / maxH : 0));
+      fill.style.height = (pct * maxH) + 'px';
+      rows.forEach(function(row){
+        row.classList.toggle('active', row.getBoundingClientRect().top < triggerY);
+      });
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  })();
+
+  // drag-to-compare slider (both panes have pointer-events:none so their
+  // embedded iframes never steal mouse/touch events from the drag handle)
+  (function(){
+    var wrap = document.getElementById('compareWrap');
+    var handle = document.getElementById('compareHandle');
+    var dragging = false;
+    function setReveal(clientX){
+      var rect = wrap.getBoundingClientRect();
+      var pct = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+      wrap.style.setProperty('--reveal', pct + '%');
+    }
+    handle.addEventListener('pointerdown', function(e){ dragging = true; e.preventDefault(); });
+    window.addEventListener('pointerup', function(){ dragging = false; });
+    window.addEventListener('pointercancel', function(){ dragging = false; });
+    window.addEventListener('pointermove', function(e){ if(dragging) setReveal(e.clientX); });
+    wrap.addEventListener('click', function(e){ if(e.target !== handle) setReveal(e.clientX); });
+  })();
+
+  // contact form (static demo — no backend)
+  document.getElementById('caseForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('formThanks').classList.add('show');
+  });
+</script>
+
+</body>
+</html>

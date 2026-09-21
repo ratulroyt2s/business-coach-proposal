@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cormorant Point Hotel | Waterfront Boutique Resort</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">CP</span>
+        Cormorant Point
+      </a>
+      <ul class="nav-links">
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="#book" class="btn-nav">Book Direct</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#rooms">Rooms</a>
+      <a href="#experience">Experience</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#book" class="btn-mobile">Book Direct</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80" alt="Cormorant Point Hotel at sunset"/>
+      <div class="hero-scrim"></div>
+    </div>
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Waterfront &middot; Boutique &middot; Est. 1987</p>
+      <h1>Where the coastline<br/>meets quiet luxury.</h1>
+    </div>
+    <div class="booking-bar">
+      <div class="booking-field">
+        <label>Check In</label>
+        <input type="date"/>
+      </div>
+      <div class="booking-field">
+        <label>Check Out</label>
+        <input type="date"/>
+      </div>
+      <div class="booking-field">
+        <label>Guests</label>
+        <select>
+          <option>1 Guest</option>
+          <option selected>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <button class="btn-book">Check Availability</button>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>4.9★ Guest Rating</span><span>&bull;</span>
+      <span>Best Rate Guaranteed When You Book Direct</span><span>&bull;</span>
+      <span>Featured in Coastal Living</span><span>&bull;</span>
+      <span>Private Beach Access</span><span>&bull;</span>
+      <span>4.9★ Guest Rating</span><span>&bull;</span>
+      <span>Best Rate Guaranteed When You Book Direct</span><span>&bull;</span>
+      <span>Featured in Coastal Living</span><span>&bull;</span>
+      <span>Private Beach Access</span><span>&bull;</span>
+    </div>
+  </div>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+    <div class="rooms-head">
+      <p class="section-tag">Rooms &amp; Suites</p>
+      <h2>Every room faces the water.</h2>
+    </div>
+    <div class="rooms-scroll">
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&q=80" alt="Harbor View Room"/>
+        <div class="room-info">
+          <h3>Harbor View Room</h3>
+          <p>From $289 / night</p>
+          <a href="#book">View Room &rarr;</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=500&q=80" alt="Sunset Suite"/>
+        <div class="room-info">
+          <h3>Sunset Suite</h3>
+          <p>From $429 / night</p>
+          <a href="#book">View Room &rarr;</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&q=80" alt="Beachfront Bungalow"/>
+        <div class="room-info">
+          <h3>Beachfront Bungalow</h3>
+          <p>From $610 / night</p>
+          <a href="#book">View Room &rarr;</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=500&q=80" alt="Garden King Room"/>
+        <div class="room-info">
+          <h3>Garden King Room</h3>
+          <p>From $249 / night</p>
+          <a href="#book">View Room &rarr;</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=500&q=80" alt="The Cormorant Penthouse"/>
+        <div class="room-info">
+          <h3>The Cormorant Penthouse</h3>
+          <p>From $890 / night</p>
+          <a href="#book">View Room &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <p class="section-tag center">The Experience</p>
+    <h2 class="center">More than a place to stay.</h2>
+
+    <div class="exp-row">
+      <div class="exp-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Oceanfront dining"/></div>
+      <div class="exp-copy">
+        <span class="exp-num">01</span>
+        <h3>Oceanfront Dining</h3>
+        <p>Chef-driven coastal cuisine served on a terrace overlooking the harbor, with a raw bar and a wine list built around the tide.</p>
+      </div>
+    </div>
+
+    <div class="exp-row reverse">
+      <div class="exp-media"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=80" alt="Coastal spa and wellness"/></div>
+      <div class="exp-copy">
+        <span class="exp-num">02</span>
+        <h3>Coastal Spa &amp; Wellness</h3>
+        <p>Treatments inspired by the sea &mdash; sound baths, saltwater soaking pools, and a sauna looking straight out over the water.</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-media"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Private beach access"/></div>
+      <div class="exp-copy">
+        <span class="exp-num">03</span>
+        <h3>Private Beach Access</h3>
+        <p>A quarter-mile of private shoreline, reserved loungers, and a beach bar that finds you before you even ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <p class="section-tag center">Guest Reviews</p>
+    <h2 class="center">Stories from the water's edge.</h2>
+    <div class="review-cards">
+      <div class="review-card rot-a">
+        <div class="stars">★★★★★</div>
+        <p>"Booked direct and the rate beat every OTA we checked. The room upgrade alone was worth switching."</p>
+        <span>— Priya M.</span>
+      </div>
+      <div class="review-card rot-b">
+        <div class="stars">★★★★★</div>
+        <p>"We've stayed at Cormorant Point three years running. The private beach is not an exaggeration &mdash; it's actually private."</p>
+        <span>— Daniel &amp; Kate W.</span>
+      </div>
+      <div class="review-card rot-a">
+        <div class="stars">★★★★★</div>
+        <p>"Booking on their site took two minutes flat. Way easier than the usual OTA runaround."</p>
+        <span>— Grace T.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section class="book-cta" id="book">
+    <div class="book-media">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&q=80" alt="Cormorant Point coastline"/>
+      <div class="book-scrim"></div>
+    </div>
+    <div class="book-content">
+      <p class="section-tag light center">Book Direct</p>
+      <h2 class="center light">Best rate, guaranteed —<br/>only when you book with us.</h2>
+      <div class="booking-bar booking-bar-light">
+        <div class="booking-field">
+          <label>Check In</label>
+          <input type="date"/>
+        </div>
+        <div class="booking-field">
+          <label>Check Out</label>
+          <input type="date"/>
+        </div>
+        <div class="booking-field">
+          <label>Guests</label>
+          <select>
+            <option>1 Guest</option>
+            <option selected>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4+ Guests</option>
+          </select>
+        </div>
+        <button class="btn-book">Check Availability</button>
+      </div>
+      <p class="book-note">Planning a wedding or group stay? <a href="#inquiry">Send us an inquiry</a> instead.</p>
+    </div>
+  </section>
+
+  <!-- INQUIRY -->
+  <section class="inquiry" id="inquiry">
+    <div class="inquiry-inner">
+      <div class="inquiry-copy">
+        <p class="section-tag">Groups &amp; Events</p>
+        <h2>Weddings, retreats &amp; private events.</h2>
+        <p>Tell us what you're planning and our events team will follow up within one business day.</p>
+      </div>
+      <form class="inquiry-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Email Address" required/>
+        <select required>
+          <option value="" disabled selected>Event Type</option>
+          <option>Wedding</option>
+          <option>Corporate Retreat</option>
+          <option>Family Celebration</option>
+          <option>Other</option>
+        </select>
+        <input type="text" placeholder="Preferred Dates"/>
+        <textarea rows="3" placeholder="Tell us about your event"></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="#home" class="logo footer-logo"><span class="logo-mark">CP</span> Cormorant Point Hotel</a>
+      <p>123 Harbor Point Road &middot; Reservations (800) 555-0199</p>
+    </div>
+    <div class="footer-grid">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&q=60" alt=""/>
+      <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=200&q=60" alt=""/>
+      <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=200&q=60" alt=""/>
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=200&q=60" alt=""/>
+      <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=200&q=60" alt=""/>
+      <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=200&q=60" alt=""/>
+    </div>
+    <p class="footer-fine">Cormorant Point Hotel is a fictional property created for portfolio purposes. &copy; 2026.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

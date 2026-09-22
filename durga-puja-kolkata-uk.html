@@ -199,6 +199,15 @@
   .extend-card .desc{font-size:13.5px;color:color-mix(in srgb, var(--cream) 58%, transparent);line-height:1.7;margin-bottom:14px;}
   .extend-card .avail{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
 
+  /* How we organise it */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:40px;}
+  @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);}}
+  .process-card{background:color-mix(in srgb, var(--deep) 75%, transparent);border:1px solid color-mix(in srgb, var(--gold) 10%, transparent);padding:32px 24px;transition:border-color .3s;}
+  .process-card:hover{border-color:color-mix(in srgb, var(--gold) 28%, transparent);}
+  .process-step{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--gold);margin-bottom:12px;}
+  .process-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--ivory);margin-bottom:10px;}
+  .process-desc{font-size:13px;color:color-mix(in srgb, var(--cream) 58%, transparent);line-height:1.7;}
+
   /* Two-col info */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
   @media(max-width:900px){.two-col{grid-template-columns:1fr;gap:44px;}}
@@ -584,7 +593,43 @@
   </div>
 </section>
 
-<section id="packages" class="bg-maroon">
+<section id="how-it-works" class="bg-maroon">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How We Organise Your Journey</div>
+      <h2 class="playfair">What You Can Expect, <em>Start to Finish</em></h2>
+      <div class="divider"></div>
+      <p class="lede">This isn't a coach tour with a fixed itinerary. Here's what actually happens once you reserve your place.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-step">Before You Arrive</div>
+        <div class="process-title">Your Trip Is Planned Around You</div>
+        <div class="process-desc">Once you reserve, your dedicated concierge builds the itinerary around your package, dates, and interests — hotel, permits, and private introductions are arranged weeks in advance.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-step">On Arrival</div>
+        <div class="process-title">Met at the Airport</div>
+        <div class="process-desc">A private transfer meets you at Kolkata airport. After a long flight, the last thing you need is to queue for a taxi in an unfamiliar city.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-step">Day to Day</div>
+        <div class="process-title">One Guide, One Small Group</div>
+        <div class="process-desc">Never more than eight guests, and never merged with another group. Mornings are for curated visits and artisan studios; evenings for the pandal circuit and rituals — paced to you, not a fixed schedule.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-step">Throughout</div>
+        <div class="process-title">The Access We Arrange</div>
+        <div class="process-desc">Years-long relationships with pandal committees and artisan families open doors a walk-in visitor never sees — private viewing windows, studio visits, invitations into homes on Ashtami.</div>
+      </div>
+    </div>
+
+    <p class="note">At the end of your stay, a private transfer returns you to the airport — or hands you seamlessly into a Darjeeling, Sundarbans, or Shantiniketan extension if you've added one.</p>
+  </div>
+</section>
+
+<section id="packages">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Choose Your Immersion</div>
@@ -652,7 +697,7 @@
   </div>
 </section>
 
-<section id="extend">
+<section id="extend" class="bg-maroon">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Beyond the Festival</div>
@@ -680,7 +725,7 @@
   </div>
 </section>
 
-<section id="faq" class="bg-maroon">
+<section id="faq">
   <div class="wrap" style="max-width:820px;">
     <div class="section-head">
       <div class="eyebrow">Common Questions</div>
@@ -711,7 +756,7 @@
   </div>
 </section>
 
-<section id="reserve">
+<section id="reserve" class="bg-maroon">
   <div class="wrap">
     <div class="two-col" style="align-items:start;">
       <div>
@@ -798,6 +843,7 @@
         <li><a href="#getting-here">Getting Here</a></li>
         <li><a href="#story">The Festival</a></li>
         <li><a href="#five-days">The Five Days</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#etiquette">Etiquette</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ironclad Motorworks | Custom Restoration &amp; Performance Builds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">IM</span>
+        IRONCLAD MOTORWORKS
+      </a>
+      <ul class="nav-links">
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+      <a href="#quote" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#builds">Builds</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#quote" class="btn-mobile">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80" alt="Custom restored car in the shop"/>
+      <div class="hero-scrim"></div>
+    </div>
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Restoration &middot; Performance &middot; Custom Fabrication</p>
+      <h1>BUILT BY HAND.<br/>PROVEN ON THE ROAD.</h1>
+      <p class="hero-sub">15 years of frame-off restorations, engine builds, and full custom fabrication — every project documented from teardown to final polish.</p>
+      <div class="hero-actions">
+        <a href="#builds" class="btn-primary">View Our Builds</a>
+        <a href="#quote" class="btn-outline">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDS -->
+  <section class="builds" id="builds">
+    <div class="builds-head">
+      <p class="section-tag">The Work</p>
+      <h2>Every build, documented.</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="restoration">Restoration</button>
+        <button class="filter-btn" data-filter="performance">Performance</button>
+        <button class="filter-btn" data-filter="paint">Custom Paint</button>
+        <button class="filter-btn" data-filter="fabrication">Fabrication</button>
+      </div>
+    </div>
+    <div class="build-grid" id="buildGrid">
+      <div class="build-card" data-cat="restoration">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80" alt="1967 Mustang frame-off restoration"/>
+        <div class="build-tag">Restoration</div>
+        <h3>'67 Mustang Fastback</h3>
+      </div>
+      <div class="build-card" data-cat="performance">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" alt="Twin-turbo engine build"/>
+        <div class="build-tag">Performance</div>
+        <h3>Twin-Turbo LS Build</h3>
+      </div>
+      <div class="build-card" data-cat="paint">
+        <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=600&q=80" alt="Custom candy paint job"/>
+        <div class="build-tag">Custom Paint</div>
+        <h3>Candy Copper Paint</h3>
+      </div>
+      <div class="build-card" data-cat="fabrication">
+        <img src="https://images.unsplash.com/photo-1600661653561-629509216228?w=600&q=80" alt="Custom roll cage fabrication"/>
+        <div class="build-tag">Fabrication</div>
+        <h3>Full Roll Cage Build</h3>
+      </div>
+      <div class="build-card" data-cat="restoration">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Classic Bronco restoration"/>
+        <div class="build-tag">Restoration</div>
+        <h3>'79 Bronco Rebuild</h3>
+      </div>
+      <div class="build-card" data-cat="performance">
+        <img src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=600&q=80" alt="Track-tuned suspension"/>
+        <div class="build-tag">Performance</div>
+        <h3>Track-Tuned Suspension</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT -->
+  <section class="spotlight">
+    <div class="spotlight-inner">
+      <div class="spotlight-copy">
+        <p class="section-tag">Build Spotlight</p>
+        <h2>From rust to show-ready.</h2>
+        <p>This '67 Mustang came in with a rotted floor pan, a seized engine, and thirty years of rust. Fourteen weeks later, it left on a trailer to a car show — and won its class.</p>
+        <a href="#quote" class="btn-outline">Start Your Build</a>
+      </div>
+      <div class="spotlight-compare" id="spotlightCompare" style="--reveal:50%;">
+        <div class="sp-before">
+          <img src="https://images.unsplash.com/photo-1516211881327-8e97970afbb1?w=900&q=80" alt="Before restoration"/>
+        </div>
+        <div class="sp-after" id="spAfter">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&q=80" alt="After restoration"/>
+        </div>
+        <div class="sp-handle" id="spHandle"></div>
+        <span class="sp-tag sp-tag-before">Before</span>
+        <span class="sp-tag sp-tag-after">After</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <p class="section-tag center">How We Build</p>
+    <h2 class="center">Four stages. Zero shortcuts.</h2>
+    <div class="stage-bar">
+      <div class="stage">
+        <span class="stage-num">01</span>
+        <h3>Teardown</h3>
+        <p>Full disassembly and inspection — nothing gets rebuilt until we know exactly what we're working with.</p>
+      </div>
+      <div class="stage">
+        <span class="stage-num">02</span>
+        <h3>Fabrication</h3>
+        <p>Metal work, panel repair, and custom fabrication built to factory spec or better.</p>
+      </div>
+      <div class="stage">
+        <span class="stage-num">03</span>
+        <h3>Paint &amp; Finish</h3>
+        <p>Color-matched or custom paint, applied in our dedicated booth and wet-sanded by hand.</p>
+      </div>
+      <div class="stage">
+        <span class="stage-num">04</span>
+        <h3>Final Assembly</h3>
+        <p>Reassembly, dyno tuning, and a full shakedown drive before it ever leaves the shop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <p class="section-tag center">Owner Reviews</p>
+    <div class="quote-rotator" id="quoteRotator">
+      <div class="quote-slide active">
+        <p>"They sent me photos every single week of the build. I felt like I was in the shop with them the whole time."</p>
+        <span>— Marcus D., '67 Mustang Fastback</span>
+      </div>
+      <div class="quote-slide">
+        <p>"Other shops quoted me and disappeared. Ironclad showed me their actual work before I even asked."</p>
+        <span>— Renee K., Twin-Turbo LS Build</span>
+      </div>
+      <div class="quote-slide">
+        <p>"Fourteen weeks, exactly as promised. The paint alone is worth the drive to see in person."</p>
+        <span>— Tom H., '79 Bronco Rebuild</span>
+      </div>
+    </div>
+    <div class="quote-dots" id="quoteDots"></div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-cta" id="quote">
+    <div class="quote-inner">
+      <div class="quote-copy">
+        <p class="section-tag">Start a Build</p>
+        <h2>Tell us about your car.</h2>
+        <p>Send us the details and photos if you have them — most quotes go out within two business days.</p>
+      </div>
+      <form class="quote-form" id="contactForm">
+        <div class="form-row">
+          <div class="f-group"><label>Name</label><input type="text" required/></div>
+          <div class="f-group"><label>Phone</label><input type="tel" required/></div>
+        </div>
+        <div class="form-row">
+          <div class="f-group"><label>Vehicle Make / Model</label><input type="text" placeholder="e.g. 1967 Ford Mustang"/></div>
+          <div class="f-group">
+            <label>Project Type</label>
+            <select required>
+              <option value="" disabled selected></option>
+              <option>Restoration</option>
+              <option>Performance Build</option>
+              <option>Custom Paint</option>
+              <option>Fabrication</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group"><label>Project Details</label><textarea rows="4"></textarea></div>
+        <button type="submit">Request a Quote</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="logo footer-logo"><span class="logo-mark">IM</span> IRONCLAD MOTORWORKS</a>
+      <p>4410 Industrial Pkwy, Unit C &middot; (555) 019-4477 &middot; Mon&ndash;Fri 8am&ndash;5:30pm</p>
+      <p class="footer-fine">Ironclad Motorworks is a fictional shop created for portfolio purposes. &copy; 2026.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kestrel Realty Group | Know the Neighborhood. Find the Home.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- MOBILE TOP BAR -->
+  <header class="topbar">
+    <a href="#home" class="logo"><span class="logo-mark">K</span> Kestrel Realty</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#listings">Listings</a>
+    <a href="#neighborhoods">Neighborhoods</a>
+    <a href="#agents">Agents</a>
+    <a href="#sell">What's My Home Worth?</a>
+  </div>
+
+  <!-- LEFT RAIL -->
+  <aside class="rail">
+    <a href="#home" class="logo"><span class="logo-mark">K</span> Kestrel<br/><small>REALTY GROUP</small></a>
+    <nav class="rail-nav">
+      <a href="#home">Search</a>
+      <a href="#listings">Listings</a>
+      <a href="#neighborhoods">Neighborhoods</a>
+      <a href="#agents">Agents</a>
+      <a href="#sell">Sell</a>
+    </nav>
+    <div class="rail-foot">
+      <p>Talk to a local agent</p>
+      <strong>(555) 014-2290</strong>
+      <a href="#sell" class="rail-btn">Home Valuation</a>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <p class="eyebrow">Independent &middot; Hyperlocal &middot; Since 2004</p>
+        <h1>Know the neighborhood.<br/>Then find the <mark>home</mark>.</h1>
+        <div class="search-card">
+          <div class="search-tabs" id="searchTabs">
+            <button class="active" data-tab="buy">Buy</button>
+            <button data-tab="sell">Sell</button>
+            <button data-tab="rent">Rent</button>
+          </div>
+          <form class="search-form" id="searchForm">
+            <input type="text" id="searchInput" placeholder="Neighborhood, city or ZIP"/>
+            <select><option>Any price</option><option>Under $400k</option><option>$400k – $800k</option><option>$800k+</option></select>
+            <select><option>Any beds</option><option>2+</option><option>3+</option><option>4+</option></select>
+            <button type="submit" id="searchBtn">Search Homes</button>
+          </form>
+        </div>
+        <div class="chips">
+          <span>1,200+ homes sold</span><span>14 neighborhoods</span><span>22 local agents</span>
+        </div>
+      </div>
+      <div class="hero-collage">
+        <img class="c1" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80" alt="Modern family home"/>
+        <img class="c2" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="Contemporary house"/>
+        <img class="c3" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="Lakeview home"/>
+      </div>
+    </section>
+
+    <!-- LISTINGS -->
+    <section class="listings" id="listings">
+      <div class="section-head">
+        <div>
+          <p class="section-tag">Featured Homes</p>
+          <h2>Fresh on the market.</h2>
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="house">Houses</button>
+          <button data-filter="condo">Condos</button>
+          <button data-filter="new">New Builds</button>
+        </div>
+      </div>
+      <div class="listing-grid" id="listingGrid">
+        <article class="listing-card feature" data-type="house">
+          <span class="price">$849,000</span>
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=80" alt="9 Heron Court"/>
+          <div class="l-info"><h3>9 Heron Court</h3><p>Ridgeline &middot; 5 bd &middot; 4 ba &middot; 4,000 sq ft</p></div>
+        </article>
+        <article class="listing-card" data-type="house">
+          <span class="price">$489,000</span>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="88 Ridge Road"/>
+          <div class="l-info"><h3>88 Ridge Road</h3><p>Ridgeline &middot; 4 bd &middot; 2 ba</p></div>
+        </article>
+        <article class="listing-card" data-type="condo">
+          <span class="price">$365,000</span>
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Harbor Lofts 4B"/>
+          <div class="l-info"><h3>Harbor Lofts 4B</h3><p>Old Harbor &middot; 2 bd &middot; 2 ba</p></div>
+        </article>
+        <article class="listing-card" data-type="new">
+          <span class="price">$615,000</span>
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="402 Oak Lane"/>
+          <div class="l-info"><h3>402 Oak Lane</h3><p>Maple Hill &middot; 4 bd &middot; 3 ba &middot; New build</p></div>
+        </article>
+        <article class="listing-card" data-type="house">
+          <span class="price">$429,000</span>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="56 Birch Avenue"/>
+          <div class="l-info"><h3>56 Birch Avenue</h3><p>Maple Hill &middot; 3 bd &middot; 2 ba</p></div>
+        </article>
+        <article class="listing-card" data-type="condo">
+          <span class="price">$298,000</span>
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80" alt="Union Square 12A"/>
+          <div class="l-info"><h3>Union Square 12A</h3><p>Downtown &middot; 1 bd &middot; 1 ba</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NEIGHBORHOODS -->
+    <section class="neighborhoods" id="neighborhoods">
+      <p class="section-tag">Neighborhood Guides</p>
+      <h2>Our agents live here. It shows.</h2>
+      <div class="nb-wrap">
+        <div class="nb-tabs" id="nbTabs">
+          <button class="active" data-nb="ridgeline">Ridgeline</button>
+          <button data-nb="oldharbor">Old Harbor</button>
+          <button data-nb="maplehill">Maple Hill</button>
+          <button data-nb="downtown">Downtown</button>
+        </div>
+        <div class="nb-panels">
+          <div class="nb-panel active" data-nb="ridgeline">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=900&q=80" alt="Ridgeline"/>
+            <div class="nb-body">
+              <h3>Ridgeline</h3>
+              <p>Quiet, tree-lined streets, big lots, and the best-rated schools in the county. Weekends belong to the trailhead at the end of Ridge Road.</p>
+              <ul><li><b>$785k</b> median price</li><li><b>91</b> walk score</li><li><b>14</b> avg days on market</li></ul>
+            </div>
+          </div>
+          <div class="nb-panel" data-nb="oldharbor">
+            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=900&q=80" alt="Old Harbor"/>
+            <div class="nb-body">
+              <h3>Old Harbor</h3>
+              <p>Converted warehouse lofts, a working waterfront, and a Saturday market that sets the tone for the whole week.</p>
+              <ul><li><b>$410k</b> median price</li><li><b>96</b> walk score</li><li><b>21</b> avg days on market</li></ul>
+            </div>
+          </div>
+          <div class="nb-panel" data-nb="maplehill">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80" alt="Maple Hill"/>
+            <div class="nb-body">
+              <h3>Maple Hill</h3>
+              <p>Where most of our new construction lives &mdash; modern floor plans, growing parks, and a commute that finally makes sense.</p>
+              <ul><li><b>$560k</b> median price</li><li><b>68</b> walk score</li><li><b>17</b> avg days on market</li></ul>
+            </div>
+          </div>
+          <div class="nb-panel" data-nb="downtown">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900&q=80" alt="Downtown"/>
+            <div class="nb-body">
+              <h3>Downtown</h3>
+              <p>Walk to everything. Condos above coffee shops, rooftop views, and no car required if you don't want one.</p>
+              <ul><li><b>$330k</b> median price</li><li><b>98</b> walk score</li><li><b>25</b> avg days on market</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENTS -->
+    <section class="agents" id="agents">
+      <p class="section-tag">Your Local Team</p>
+      <h2>Meet the people behind the keys.</h2>
+      <div class="agent-row">
+        <div class="agent"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Sandra Kim"/><h3>Sandra Kim</h3><p>Ridgeline specialist</p></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Mike Dalton"/><h3>Mike Dalton</h3><p>Old Harbor &amp; lofts</p></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" alt="Lisa Park"/><h3>Lisa Park</h3><p>New construction</p></div>
+        <div class="agent"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Tom Rivera"/><h3>Tom Rivera</h3><p>Downtown &amp; investors</p></div>
+      </div>
+    </section>
+
+    <!-- SELL -->
+    <section class="sell" id="sell">
+      <div class="sell-inner">
+        <div class="sell-copy">
+          <p class="section-tag light">Thinking of Selling?</p>
+          <h2>What's your home worth today?</h2>
+          <p>Get a free, no-pressure valuation from an agent who actually sells on your street &mdash; not an algorithm guessing from a zip code.</p>
+          <ul>
+            <li>Comparable sales from your exact block</li>
+            <li>A local pricing strategy, not a template</li>
+            <li>A reply from a real agent within one business day</li>
+          </ul>
+        </div>
+        <form class="sell-form" id="contactForm">
+          <input type="text" placeholder="Property address" required/>
+          <input type="email" placeholder="Your email" required/>
+          <input type="tel" placeholder="Phone (optional)"/>
+          <button type="submit">Get My Free Valuation</button>
+          <span class="form-note">No spam. No obligation.</span>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-top">
+        <p>Kestrel Realty Group &middot; 250 Ridge Road &middot; (555) 014-2290</p>
+        <p class="fine">Kestrel Realty Group is a fictional brokerage created for portfolio purposes. Equal Housing Opportunity. &copy; 2026.</p>
+      </div>
+      <div class="wordmark">KESTREL</div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
